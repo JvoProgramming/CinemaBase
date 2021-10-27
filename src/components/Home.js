@@ -13,9 +13,10 @@ import { useHomeFetch } from "../hooks/useHomeFetch";
 
 // Image
 import NoImage from "../images/no_image.jpg";
+import SearchBar from "./SearchBar";
 
 export default function Home() {
-  const { state, loading, error } = useHomeFetch();
+  const { state, loading, error, setSearchTerm } = useHomeFetch();
 
   //Optimizing when passing in props
   const firstResult = state.results[0];
@@ -31,6 +32,7 @@ export default function Home() {
           text={firstResult.overview}
         />
       ) : null}
+      <SearchBar setSearchTerm={setSearchTerm} />
       <Grid header="Popular Movies">
         {state.results.map((movie) => (
           <Thumb
