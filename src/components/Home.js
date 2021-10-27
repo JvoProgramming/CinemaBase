@@ -17,12 +17,15 @@ import NoImage from "../images/no_image.jpg";
 import SearchBar from "./SearchBar";
 
 export default function Home() {
-  const { state, loading, error, setSearchTerm, searchTerm } = useHomeFetch();
+  const { state, loading, error, setSearchTerm, searchTerm, setIsLoadingMore } =
+    useHomeFetch();
 
   //Optimizing when passing in props
   const firstResult = state.results[0];
 
   console.log(state);
+
+  if (error) return <div>Something went wrong...</div>;
 
   return (
     <>
@@ -51,7 +54,7 @@ export default function Home() {
       {loading && <Spinner />}
       {console.log(loading)}
       {state.page < state.total_pages && !loading && (
-        <Button text="Load More" />
+        <Button text="Load More" callback={() => setIsLoadingMore(true)} />
       )}
     </>
   );
