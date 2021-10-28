@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import RMDBLogo from "../../images/CinemaBaseIcon.png";
 import TMDBLogo from "../../images/tmdb_logo.svg";
@@ -9,8 +10,12 @@ export default function Header() {
   return (
     <Wrapper>
       <Content>
-        <LogoImg src={RMDBLogo} alt="rmbd-logo" />
-        <TMDBLogoImg src={TMDBLogo} alt="tbmd-logo" />
+        <Link to="/">
+          <LogoImg src={RMDBLogo} alt="rmbd-logo" />
+        </Link>
+        <a href="https://developers.themoviedb.org/3/getting-started/introduction">
+          <TMDBLogoImg src={TMDBLogo} alt="tbmd-logo" />
+        </a>
       </Content>
     </Wrapper>
   );

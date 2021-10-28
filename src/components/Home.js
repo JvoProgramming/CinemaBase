@@ -47,7 +47,7 @@ export default function Home() {
                 ? IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path
                 : NoImage
             }
-            movieId={movie.id}
+            movieID={movie.id}
           />
         ))}
       </Grid>

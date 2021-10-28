@@ -18,11 +18,17 @@ export const LogoImg = styled.img`
   @media screen and (max-width: 500px) {
     width: 150px;
   }
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 export const TMDBLogoImg = styled.img`
   width: 100px;
   @media screen and (max-width: 500px) {
     width: 80px;
+  }
+  :hover {
+    cursor: pointer;
   }
 `;
