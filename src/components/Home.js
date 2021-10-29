@@ -52,7 +52,6 @@ export default function Home() {
         ))}
       </Grid>
       {loading && <Spinner />}
-      {console.log(loading)}
       {state.page < state.total_pages && !loading && (
         <Button text="Load More" callback={() => setIsLoadingMore(true)} />
       )}
